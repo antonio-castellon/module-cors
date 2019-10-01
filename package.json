@@ -1,0 +1,26 @@
+{
+  "name": "@acastellon/cors",
+  "version": "1.0.0",
+  "description": "CORS filter for Node Express Application",
+  "main": "cors.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonio-castellon/cors.git"
+  },
+  "keywords": [
+    "express",
+    "cors"
+  ],
+  "dependencies": {
+    "cors": "^2.8.4"
+  },
+  "author": "Antonio Castellon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antonio-castellon/cors/issues"
+  },
+  "homepage": "https://github.com/antonio-castellon/cors#readme"
+}
