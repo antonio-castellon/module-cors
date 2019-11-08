@@ -1,3 +1,4 @@
+"use strict";
 // CORS & Headers control system
 //
 // Common code to be used for all services in order to enable the access
