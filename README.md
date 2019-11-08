@@ -7,3 +7,6 @@ it uses a plain text file to define by line what are the allowed requesters by C
 usage:
 
     const cors      = require('@acastellon/cors')('<path/to/whiletlist>');
+    
+    cors.enableCORS(app);  
+    // where 'app' is the Application Express instance object.
