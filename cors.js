@@ -20,7 +20,6 @@ module.exports = function(path2whiteListFile) {
   //
   // CONFIGURATION
   //
-  //const whitelist = fs.readFileSync(config.CERTIFICATION_PATH + '/whitelist', "utf8").split(/\r?\n/);
   const whitelist = fs.readFileSync(path2whiteListFile, "utf8").split(/\r?\n/);
 
   //

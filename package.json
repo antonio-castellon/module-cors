@@ -15,7 +15,7 @@
     "cors"
   ],
   "dependencies": {
-    "cors": "^2.8.4"
+    "cors": "^2.8.5"
   },
   "author": "Antonio Castellon",
   "license": "MIT",
