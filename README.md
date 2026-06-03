@@ -1,12 +1,24 @@
-# CORS
-Wrapper object that contains the generic most common configuration values of 
-filtering & Options to be used in Node Express Applications.
+# @acastellon/cors
 
-it uses a plain text file to define by line what are the allowed requesters by CORS.
+CORS filter for Node Express Application.
 
-usage:
+## Install
 
-    const cors      = require('@acastellon/cors')('<path/to/whiletlist>');
-    
-    cors.enableCORS(app);  
-    // where 'app' is the Application Express instance object.
+```bash
+npm install @acastellon/cors
+```
+
+## Usage
+
+```js
+const cors = require('@acastellon/cors')('./whitelist');
+cors.enableCORS(app);
+```
+
+Whitelist file: one origin per line (e.g. https://example.com)
+
+**Note:** Reading whitelist at load time (sync). For production consider dynamic reload.
+
+## License
+
+MIT
