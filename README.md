@@ -19,6 +19,18 @@ The whitelist file should contain one allowed origin per line (e.g. https://exam
 
 **Note:** Whitelist is read synchronously at module load time.
 
+## API
+
+### `enableCORS(app: ExpressApplication): void`
+
+Applies two middlewares:
+1. Custom header setter (expose, allow headers for auth/cors, methods, credentials).
+2. `cors()` from the 'cors' package, configured with origin whitelist check + credentials.
+
+- **Parameters**: `app` - An express app (will call app.use twice).
+- **Side effects**: Mutates the app by adding middleware. Reads whitelist file at construction time.
+- **Errors**: Will call next(err) with 'Not allowed by CORS' for disallowed origins.
+
 ## License
 
 MIT

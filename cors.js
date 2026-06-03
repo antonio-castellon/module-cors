@@ -12,15 +12,24 @@
 const cors = require('cors');
 const fs = require('fs');
 
+/**
+ * Creates a CORS enabler.
+ * @param {string} path2whiteListFile - Path to newline-separated whitelist of origins.
+ * @returns {{enableCORS: function(app: object): void}}
+ */
 module.exports = function(path2whiteListFile) {
 
   const model = {};
 
-  // CONFIGURATION
   const whitelist = fs.readFileSync(path2whiteListFile, 'utf8').split(/\r?\n/);
 
   model.enableCORS = enableCORS;
 
+  /**
+   * Applies CORS + custom header middleware to an Express app.
+   * Sets expose/allow headers and uses the cors package with origin validation.
+   * @param {object} app - Express application instance
+   */
   function enableCORS(app) {
     app.use(function (req, res, next) {
       res.header('Access-Control-Expose-Headers', 'WWW-Authenticate, access-control-*,origin,x-requested-with,content-type,accept,authorization,x-auth');
@@ -33,7 +42,6 @@ module.exports = function(path2whiteListFile) {
 
     const corsOptions = {
       origin: function (origin, callback) {
-        // note: from server www the origin appears as undefined, to be checked later
         if (whitelist.indexOf(origin) !== -1 || !origin || typeof origin == 'undefined') {
           callback(null, true);
         } else {
