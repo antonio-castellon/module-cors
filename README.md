@@ -11,13 +11,13 @@ npm install @acastellon/cors
 ## Usage
 
 ```js
-const cors = require('@acastellon/cors')('./whitelist');
-cors.enableCORS(app);
+const corsMod = require('@acastellon/cors')('./whitelist');
+corsMod.enableCORS(app);
 ```
 
-Whitelist file: one origin per line (e.g. https://example.com)
+The whitelist file should contain one allowed origin per line (e.g. https://example.com). Origin check allows undefined (server-side) and matches exact.
 
-**Note:** Reading whitelist at load time (sync). For production consider dynamic reload.
+**Note:** Whitelist is read synchronously at module load time.
 
 ## License
 

@@ -25,5 +25,11 @@
   },
   "dependencies": {
     "cors": "^2.8.5"
-  }
+  },
+  "files": [
+    "cors.js",
+    "README.md",
+    "LICENSE",
+    "whitelist"
+  ]
 }
